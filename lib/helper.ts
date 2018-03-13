@@ -1,3 +1,11 @@
+declare global {
+  // Safari
+  interface SyntaxError {
+    line: number,
+    column: number
+  }
+}
+
 export type ErrorPlace = {l: number, c: number};
 export type OptErrorPlace = ErrorPlace | null;
 

@@ -1,6 +1,6 @@
-import { extractErrorPositionFromErrorMsg, showFancySyntaxException } from '../lib/firefox';
+import { extractErrorPositionFromErrorMsg, showFancySyntaxException } from '../lib/spiderMonkey';
 
-describe('Firefox', () => {
+describe('spiderMonkey', () => {
 
   describe('bulding message', () => {
 

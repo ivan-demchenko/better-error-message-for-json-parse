@@ -21,9 +21,9 @@ export const showFancySyntaxException = (rawJson: string, e: SyntaxError): strin
     : "";
 }
 
-export const safeJsonParse = <A>(raw: string): A => {
+export const safeJsonParse = <A>(raw: string, reviver?: (key: any, value: any) => any): A => {
   try {
-    return JSON.parse(raw);
+    return JSON.parse(raw, reviver);
   } catch (e) {
     throw new SyntaxError(showFancySyntaxException(raw, e));
   }

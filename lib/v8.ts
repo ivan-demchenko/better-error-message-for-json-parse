@@ -1,4 +1,4 @@
-import { mkArray, buildErrorPointer } from './helper';
+import { buildErrorPointer } from './helper';
 
 export const extractErrorPositionFromErrorMsg = (msg: string): number | null => {
   const res = /Unexpected string in JSON at position (\d+)/.exec(msg);
@@ -20,9 +20,9 @@ export const buildMessageForSyntaxException = (rawJson: string, e: SyntaxError):
   return [e.message, context.join('\n')].join('\n');
 }
 
-export const safeJsonParse = <A>(raw: string): A => {
+export const safeJsonParse = <A>(raw: string, reviver?: (key: any, value: any) => any): A => {
   try {
-    return JSON.parse(raw);
+    return JSON.parse(raw, reviver);
   } catch (e) {
     throw new SyntaxError(buildMessageForSyntaxException(raw, e));
   }

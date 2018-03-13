@@ -1,2 +1,2 @@
-var main = require('./lib/main');
+var main = require('./dist/main');
 module.exports = main;

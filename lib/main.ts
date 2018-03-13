@@ -1,3 +1,3 @@
-import { safeJsonParse } from './chrome';
+import { safeJsonParse } from './v8';
 
 export default safeJsonParse;

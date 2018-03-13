@@ -1,6 +1,6 @@
-import { buildMessageForSyntaxException } from '../lib/chrome';
+import { buildMessageForSyntaxException } from '../lib/v8';
 
-describe('Chrome', () => {
+describe('V8', () => {
 
   describe('bulding message', () => {
 
