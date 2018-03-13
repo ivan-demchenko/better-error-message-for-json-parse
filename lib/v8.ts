@@ -1,29 +1,34 @@
-import { buildErrorPointer } from './helper';
+import {
+  ErrorPlace,
+  buildErrorFromJsonAndPosition
+} from './helper';
 
 export const extractErrorPositionFromErrorMsg = (msg: string): number | null => {
   const res = /Unexpected string in JSON at position (\d+)/.exec(msg);
   return res ? parseInt(res[1], 10) : null;
 }
 
-export const getErrorPlaceContext = (rawJson: string, position: number): string =>
-  rawJson.substring(position - 20, position + 20);
+export const findErrCoords = (ls: string[], errorProximity: number, lineIdx = 0): ErrorPlace => {
+  return errorProximity > ls[lineIdx].length
+    ? findErrCoords(ls, errorProximity - ls[lineIdx].length - 1, ++lineIdx)
+    : {l: lineIdx, c: errorProximity};
+}
 
-export const buildMessageForSyntaxException = (rawJson: string, e: SyntaxError): string => {
-  const context: Array<string> = [];
-
-  const pos = extractErrorPositionFromErrorMsg(e.message);
-  if (pos) {
-    context.push(getErrorPlaceContext(rawJson, pos));
-    context.push(buildErrorPointer(pos));
+export const showFancySyntaxException = (rawJson: string, e: SyntaxError): string => {
+  const context: Array<string> = [ e.message ];
+  const lines = rawJson.split('\n');
+  const absPos = extractErrorPositionFromErrorMsg(e.message);
+  if (absPos) {
+    const errCoords = findErrCoords(lines, absPos);
+    return buildErrorFromJsonAndPosition(lines, context, errCoords);
   }
-
-  return [e.message, context.join('\n')].join('\n');
+  return e.message;
 }
 
 export const safeJsonParse = <A>(raw: string, reviver?: (key: any, value: any) => any): A => {
   try {
     return JSON.parse(raw, reviver);
   } catch (e) {
-    throw new SyntaxError(buildMessageForSyntaxException(raw, e));
+    throw new SyntaxError(showFancySyntaxException(raw, e));
   }
 }

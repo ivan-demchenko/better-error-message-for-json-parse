@@ -15,10 +15,11 @@ export const extractErrorPositionFromErrorMsg = (msg: string): OptErrorPlace => 
 
 export const showFancySyntaxException = (rawJson: string, e: SyntaxError): string => {
   const context: Array<string> = [ e.message ];
+  const lines = rawJson.split('\n');
   const position = extractErrorPositionFromErrorMsg(e.message);
   return position
-    ? buildErrorFromJsonAndPosition(rawJson.split('\n'), context, position)
-    : "";
+    ? buildErrorFromJsonAndPosition(lines, context, position)
+    : e.message;
 }
 
 export const safeJsonParse = <A>(raw: string, reviver?: (key: any, value: any) => any): A => {
