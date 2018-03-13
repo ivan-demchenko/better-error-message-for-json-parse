@@ -1,0 +1,34 @@
+{
+  "name": "safe-json-parse",
+  "version": "0.0.0",
+  "description": "parse JSON and receive better error message in case of failure",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc"
+  },
+  "keywords": [
+    "json",
+    "exceptions",
+    "safe"
+  ],
+  "author": "Ivan Demchenko (raqy.style@gmail.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^22.2.0",
+    "jest": "^22.4.2",
+    "ts-jest": "^22.4.1",
+    "tslib": "^1.9.0",
+    "typescript": "^2.7.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ]
+  }
+}
