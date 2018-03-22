@@ -27,3 +27,28 @@ Unexpected string in JSON at position 105
 -----------^
   "fullname": "Denise Pickett"
 ```
+
+### How to use
+
+1. import it
+```js
+var { safeJsonParse } = require('better-error-message-for-json-parse');
+```
+
+2. use it
+```js
+try {
+  safeJsonParse('{"a": 2, "b": 3, "v" 3, "e": 4 }');
+} catch (e) {
+  console.log(e);
+}
+```
+
+3. enjoy:
+```
+$ node index.js
+SyntaxError: Unexpected number in JSON at position 21
+{"a": 2, "b": 3, "v" 3, "e": 4 }
+--------------------^
+at exports.safeJsonParse
+```
