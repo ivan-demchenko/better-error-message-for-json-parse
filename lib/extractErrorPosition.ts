@@ -7,7 +7,7 @@ export const positionToErrorPlace = (ls: string[], errorPos: number, lineIdx = 0
 }
 
 export const errorPosFromPositionMsg = (lines: string[], msg: string): ErrorPlace | null => {
-  const res = /Unexpected string in JSON at position (\d+)/.exec(msg);
+  const res = /in JSON at position (\d+)/.exec(msg);
   return res ? positionToErrorPlace(lines, parseInt(res[1], 10)) : null;
 }
 
