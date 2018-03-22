@@ -1,10 +1,12 @@
 {
   "name": "better-error-message-for-json-parse",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Ivan Demchenko (raqy.style@gmail.com)",
   "license": "MIT",
   "description": "Parse JSON and receive better error message in case of failure",
-  "files": ["dist/lib"],
+  "files": [
+    "dist/lib"
+  ],
   "main": "main.js",
   "typings": "main.d.ts",
   "scripts": {
@@ -15,7 +17,12 @@
     "type": "git",
     "url": "https://github.com/raqystyle/better-error-message-for-json-parse"
   },
-  "keywords": ["json", "parsing", "exceptions", "errors"],
+  "keywords": [
+    "json",
+    "parsing",
+    "exceptions",
+    "errors"
+  ],
   "bugs": {
     "url": "https://github.com/raqystyle/better-error-message-for-json-parse/issues"
   },
