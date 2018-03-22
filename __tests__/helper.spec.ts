@@ -17,10 +17,10 @@ describe('bulding message', () => {
     const expected =
       [
         err.message,
-        '   "b": 5,',
-        '   "c: 5',
-        '-------^',
-        '}'
+        '3:    "b": 5,',
+        '4:    "c: 5',
+        '----------^',
+        '5: }'
       ].join('\n');
 
     // then
@@ -44,9 +44,9 @@ describe('bulding message', () => {
     const expected =
       [
         err.message,
-        '{"',
-        '-^',
-        '   "a": 4,'
+        '1: {"',
+        '----^',
+        '2:    "a": 4,'
       ].join('\n');
 
     // then

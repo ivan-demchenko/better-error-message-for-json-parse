@@ -13,10 +13,10 @@ describe('build fancy error message', () => {
       const msg = showFancySyntaxException(json, err);
       expect(msg).toEqual([
         err.message,
-        '  "surname": "Rowland"',
-        '  "fullname": "Denise Pickett",',
-        '-^',
-        '  "email": "jack@garrison.vc",'
+        '7:   "surname": "Rowland"',
+        '8:   "fullname": "Denise Pickett",',
+        '----^',
+        '9:   "email": "jack@garrison.vc",'
       ].join('\n'));
     }
 
@@ -31,10 +31,10 @@ describe('build fancy error message', () => {
       const msg = showFancySyntaxException(json, err);
       expect(msg).toEqual([
         err.message,
-        '  "name": "Eva",',
-        '  "surname" "Rowland",',
-        '-----------^',
-        '  "fullname": "Denise Pickett",',
+        '6:   "name": "Eva",',
+        '7:   "surname" "Rowland",',
+        '--------------^',
+        '8:   "fullname": "Denise Pickett",',
       ].join('\n'));
     }
 
@@ -49,8 +49,8 @@ describe('build fancy error message', () => {
       const msg = showFancySyntaxException(json, err);
       expect(msg).toEqual([
         err.message,
-        '{"a": 3, "b": 4 "c": 5, "e": 5}',
-        '---------------^',
+        '1: {"a": 3, "b": 4 "c": 5, "e": 5}',
+        '------------------^',
       ].join('\n'));
     }
 
@@ -64,8 +64,8 @@ describe('safely parse json', () => {
     const json = '{"a": 3, "b": 4 "c": 5, "e": 5}';
     const expected = [
       'Unexpected string in JSON at position 16',
-      '{"a": 3, "b": 4 "c": 5, "e": 5}',
-      '---------------^',
+      '1: {"a": 3, "b": 4 "c": 5, "e": 5}',
+      '------------------^',
     ].join('\n');
 
     try {
