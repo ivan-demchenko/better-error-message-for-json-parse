@@ -1,4 +1,4 @@
-import { showFancySyntaxException } from '../lib/parser';
+import { showFancySyntaxException } from '../lib/main';
 import { join } from 'path';
 import { readFileSync } from 'fs';
 
