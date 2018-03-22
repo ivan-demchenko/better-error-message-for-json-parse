@@ -1,5 +1,5 @@
 {
-  "name": "safe-json-parse",
+  "name": "better-error-message-for-json-parse",
   "version": "0.1.0",
   "author": "Ivan Demchenko (raqy.style@gmail.com)",
   "license": "MIT",
