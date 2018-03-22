@@ -7,8 +7,8 @@
   "files": [
     "dist/lib"
   ],
-  "main": "main.js",
-  "typings": "main.d.ts",
+  "main": "dist/lib/main.js",
+  "typings": "dist/lib/main.d.ts",
   "scripts": {
     "test": "jest",
     "build": "tsc"
