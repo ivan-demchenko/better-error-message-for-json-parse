@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "allowJs": false,
-    "module": "umd",
+    "module": "commonjs",
+    "moduleResolution": "node",
     "declaration": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
