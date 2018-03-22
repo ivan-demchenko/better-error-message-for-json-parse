@@ -2,6 +2,7 @@
   "compilerOptions": {
     "allowJs": false,
     "module": "umd",
+    "declaration": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "strict": true,
@@ -11,6 +12,7 @@
     "target": "es5",
     "lib": ["es6"]
   },
+  "include": ["./lib/**/*"],
   "exclude": [
     "node_modules"
   ]

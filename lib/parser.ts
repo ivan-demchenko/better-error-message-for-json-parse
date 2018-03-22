@@ -1,22 +1,10 @@
-import {
-  OptErrorPlace,
-  buildErrorFromJsonAndPosition
-} from './helper';
-
-export const extractErrorPositionFromErrorMsg = (msg: string): OptErrorPlace => {
-  const res = /at line (\d+) column (\d+)/.exec(msg);
-  return res
-    ? {
-        l: parseInt(res[1], 10) - 1,
-        c: parseInt(res[2], 10) - 1
-      }
-    : null;
-}
+import { buildErrorFromJsonAndPosition } from './helper';
+import { extractPosition } from './extractErrorPosition';
 
 export const showFancySyntaxException = (rawJson: string, e: SyntaxError): string => {
   const context: Array<string> = [ e.message ];
   const lines = rawJson.split('\n');
-  const position = extractErrorPositionFromErrorMsg(e.message);
+  const position = extractPosition(lines, e.message);
   return position
     ? buildErrorFromJsonAndPosition(lines, context, position)
     : e.message;

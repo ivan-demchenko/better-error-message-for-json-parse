@@ -1,3 +1,3 @@
-import { safeJsonParse } from './v8';
+import { safeJsonParse } from './parser';
 
 export default safeJsonParse;

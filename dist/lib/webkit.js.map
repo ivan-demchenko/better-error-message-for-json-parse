@@ -1,1 +1,0 @@
-{"version":3,"file":"webkit.js","sourceRoot":"","sources":["../../lib/webkit.ts"],"names":[],"mappings":";;;;;;;;;;;IAAa,QAAA,aAAa,GAAG,UAAI,GAAW,EAAE,OAAuC;QACnF,IAAI,CAAC;YACH,wFAAwF;YACxF,MAAM,CAAC,IAAI,CAAC,KAAK,CAAC,GAAG,EAAE,OAAO,CAAC,CAAC;QAClC,CAAC;QAAC,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;YACX,MAAM,CAAC,CAAC;QACV,CAAC;IACH,CAAC,CAAA"}

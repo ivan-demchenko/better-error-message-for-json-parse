@@ -7,13 +7,15 @@ declare global {
 }
 
 export type ErrorPlace = {l: number, c: number};
-export type OptErrorPlace = ErrorPlace | null;
+
 
 export const mkArray = (lim: number): Array<number> =>
   Array.from(Array(lim), function(a, i) { return i; });
 
+
 export const buildErrorPointer = (pos: number): string =>
   mkArray(pos - 1).map(() => '-').join('') + '^';
+
 
 export const buildErrorFromJsonAndPosition = (lines: string[], context: string[], position: ErrorPlace): string => {
   if (lines[position.l - 1]) {
