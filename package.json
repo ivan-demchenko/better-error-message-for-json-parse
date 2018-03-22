@@ -1,6 +1,6 @@
 {
   "name": "better-error-message-for-json-parse",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "Ivan Demchenko (raqy.style@gmail.com)",
   "license": "MIT",
   "description": "Parse JSON and receive better error message in case of failure",
