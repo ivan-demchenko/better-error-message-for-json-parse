@@ -4,9 +4,9 @@
   "author": "Ivan Demchenko (raqy.style@gmail.com)",
   "license": "MIT",
   "description": "Parse JSON and receive better error message in case of failure",
-  "files": ["dist"],
-  "main": "dist/main.js",
-  "typings": "dist/main.d.ts",
+  "files": ["dist/lib"],
+  "main": "main.js",
+  "typings": "main.d.ts",
   "scripts": {
     "test": "jest",
     "build": "tsc"
