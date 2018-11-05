@@ -4,6 +4,7 @@
     "module": "umd",
     "noImplicitAny": true,
     "noUnusedLocals": true,
+    "esModuleInterop": true,
     "strict": true,
     "outDir": "dist",
     "rootDir": ".",

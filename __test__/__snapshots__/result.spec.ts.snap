@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`building message case 1 1`] = `
+"Unexpected string in JSON at position 118
+  \\"surname\\": \\"Rowland\\"
+  \\"fullname\\": \\"Denise Pickett\\",
+-^
+  \\"email\\": \\"jack@garrison.vc\\","
+`;
+
+exports[`building message case 2 1`] = `
+"Unexpected string in JSON at position 105
+  \\"name\\": \\"Eva\\",
+  \\"surname\\" \\"Rowland\\",
+-----------^
+  \\"fullname\\": \\"Denise Pickett\\","
+`;
+
+exports[`building message case 3 1`] = `
+"JSON.parse: bad control character in string literal at line 4 column 9 of the JSON data
+  \\"b\\": 5,
+  \\"c: 5
+-------^
+}"
+`;
+
+exports[`building message case 4 1`] = `
+"JSON.parse: bad control character in string literal at line 1 column 3 of the JSON data
+{\\"
+-^
+  \\"a\\": 4,"
+`;

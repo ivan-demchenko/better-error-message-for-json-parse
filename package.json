@@ -15,12 +15,12 @@
   "author": "Ivan Demchenko (raqy.style@gmail.com)",
   "license": "ISC",
   "devDependencies": {
-    "@types/jest": "^22.2.0",
-    "@types/node": "^9.4.7",
-    "jest": "^22.4.2",
-    "ts-jest": "^22.4.1",
-    "tslib": "^1.9.0",
-    "typescript": "^2.7.2"
+    "@types/jest": "^23.3.9",
+    "@types/node": "^10.12.2",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.4",
+    "tslib": "^1.9.3",
+    "typescript": "^3.1.6"
   },
   "jest": {
     "transform": {
